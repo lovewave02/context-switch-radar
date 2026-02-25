@@ -27,6 +27,23 @@ def init_db() -> None:
             )
             """
         )
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS climate_memories (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                title TEXT NOT NULL,
+                note TEXT NOT NULL,
+                memory_date TEXT NOT NULL,
+                lat REAL NOT NULL,
+                lon REAL NOT NULL,
+                city TEXT NOT NULL DEFAULT '',
+                climate_tag TEXT NOT NULL DEFAULT '',
+                feeling TEXT NOT NULL DEFAULT '',
+                temp_c REAL,
+                created_at TEXT NOT NULL DEFAULT (datetime('now'))
+            )
+            """
+        )
         conn.commit()
     _DB_READY = True
 

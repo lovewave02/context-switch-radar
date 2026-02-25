@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기후 메모리 지도</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel hero">
+        <h1>기후 메모리 지도</h1>
+        <p>도시별 기후 기억을 기록하고 지도로 축적하세요.</p>
+        <div id="stats" class="stats"></div>
+      </section>
+
+      <section class="panel form-panel">
+        <h2>메모 추가</h2>
+        <form id="memoryForm">
+          <input id="title" placeholder="제목" required />
+          <input id="city" placeholder="도시" />
+          <input id="memoryDate" type="date" required />
+          <input id="climateTag" placeholder="태그 (예: heatwave, rain, dust)" />
+          <input id="feeling" placeholder="기분/상태" />
+          <input id="tempC" type="number" step="0.1" placeholder="기온(선택)" />
+          <div class="coords">
+            <input id="lat" type="number" step="0.000001" placeholder="위도" required />
+            <input id="lon" type="number" step="0.000001" placeholder="경도" required />
+          </div>
+          <textarea id="note" placeholder="메모 내용" required></textarea>
+          <button type="submit">저장</button>
+          <button type="button" id="seedBtn" class="secondary">샘플 데이터 넣기</button>
+        </form>
+      </section>
+
+      <section class="panel map-panel">
+        <div id="map"></div>
+      </section>
+
+      <section class="panel list-panel">
+        <div class="filters">
+          <input id="yearFilter" type="number" placeholder="연도 필터 (예: 2025)" />
+          <input id="tagFilter" placeholder="태그 필터" />
+          <button id="filterBtn">필터 적용</button>
+          <button id="resetBtn" class="secondary">초기화</button>
+        </div>
+        <ul id="memoryList"></ul>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="/static/main.js"></script>
+  </body>
+</html>

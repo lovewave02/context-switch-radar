@@ -1,10 +1,11 @@
 import os
 from pathlib import Path
+from uuid import uuid4
 
 from fastapi.testclient import TestClient
 
 
-os.environ["CSR_DB_PATH"] = str(Path("data/test_context_switch_radar.db"))
+os.environ["CSR_DB_PATH"] = str(Path("/tmp") / f"test_context_switch_radar_{uuid4().hex}.db")
 
 from src.backend.main import app  # noqa: E402
 
