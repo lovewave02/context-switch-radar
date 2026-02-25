@@ -23,6 +23,15 @@ def health() -> dict:
     return {"status": "ok"}
 
 
+@app.get("/")
+def root() -> dict:
+    return {
+        "service": "context-switch-radar",
+        "status": "ok",
+        "endpoints": ["/health", "/events", "/metrics/fragmentation"],
+    }
+
+
 @app.post("/events", response_model=EventOut)
 def create_event(payload: EventIn) -> EventOut:
     task_key = payload.task_key or payload.title.strip().lower()
