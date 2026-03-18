@@ -1,4 +1,5 @@
 import os
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from uuid import uuid4
 
@@ -12,25 +13,26 @@ from src.backend.main import app  # noqa: E402
 
 def test_events_and_fragmentation_flow():
     client = TestClient(app)
+    now = datetime.now(timezone.utc)
 
     payloads = [
         {
             "source": "vscode",
             "title": "Implement login",
             "task_key": "task-login",
-            "occurred_at": "2026-02-25T10:00:00+00:00",
+            "occurred_at": (now - timedelta(minutes=20)).isoformat(),
         },
         {
             "source": "chrome",
             "title": "Read docs",
             "task_key": "task-docs",
-            "occurred_at": "2026-02-25T10:03:00+00:00",
+            "occurred_at": (now - timedelta(minutes=17)).isoformat(),
         },
         {
             "source": "vscode",
             "title": "Fix tests",
             "task_key": "task-tests",
-            "occurred_at": "2026-02-25T10:20:00+00:00",
+            "occurred_at": now.isoformat(),
         },
     ]
 
