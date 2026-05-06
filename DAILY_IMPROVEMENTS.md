@@ -293,16 +293,9 @@
 - Hiring readiness: flagship metric depth + tradeoff docs + failure/recovery validation.
 - Portfolio hub trend: Steel Ember theme applied to stack/portfolio-hub/trend.css.
 
-## 2026-04-16
+## 2026-05-07
 - Automated daily maintenance executed.
-- Global status: 7 passed / 0 failed.
+- Global status: 0 passed / 7 failed.
 - Focus: continuous reliability checks and incremental improvement cadence.
 - Hiring readiness: flagship metric depth + tradeoff docs + failure/recovery validation.
-- Portfolio hub trend: Steel Ember theme applied to stack/portfolio-hub/trend.css.
-
-## 2026-04-17
-- Automated daily maintenance executed.
-- Global status: 7 passed / 0 failed.
-- Focus: continuous reliability checks and incremental improvement cadence.
-- Hiring readiness: flagship metric depth + tradeoff docs + failure/recovery validation.
-- Portfolio hub trend: Steel Ember theme applied to stack/portfolio-hub/trend.css.
+- Portfolio hub trend: Signal Aurora theme applied to stack/portfolio-hub/trend.css.
